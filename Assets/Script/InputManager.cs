@@ -14,25 +14,31 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetButton("Jump"))
         {
-
+            GameManager.gameManager.activeCharacter.Jump();
         }
 
         if (Input.GetButton("Fire1"))
         {
 
         }
+
+        //Example of calling switch character script
+        /*if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameManager.gameManager.ChangeActivePlayer();
+        }*/
     }
 
     private void FixedUpdate()
     {
         if (vertical != 0)
         {
-            GameManager.activeCharacter.MoveForward(vertical);
+            GameManager.gameManager.activeCharacter.MoveForward(vertical);
         }
 
         if (horizontal != 0)
         {
-            GameManager.activeCharacter.MoveToTheSide(horizontal);
+            GameManager.gameManager.activeCharacter.MoveToTheSide(horizontal);
         }
     }
 }
