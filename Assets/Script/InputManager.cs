@@ -22,11 +22,7 @@ public class InputManager : MonoBehaviour
             GameManager.gameManager.activeCharacter.gameObject.GetComponent<RaycastGun>().Shoot();
         }
 
-        //Example of calling switch character script
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameManager.gameManager.ChangeActivePlayer();
-        }*/
+        
     }
 
     private void FixedUpdate()

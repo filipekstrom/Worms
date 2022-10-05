@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
 
-    // Start is called before the first frame update
+    
     [SerializeField] private int _numberOfTeams;
     [SerializeField] private int _numberOfPlayers;
     private List<List<GameObject>> _teams;
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        //Set index for reference in other scripts who is the selected player
+        
         teamSelected = 0;
         playerSelected = 0;
         activeCharacter = _teams[teamSelected][playerSelected].GetComponent<CharacterManager>();
@@ -45,9 +45,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator ChangeActivePlayer(){
 
-        //Add one to team selected, or if at the last team, teamSeleced = 0
-        //When cycling teams, add +1 to player selected. If last player, player selected = 0;
-        //Tip for this: <List>.Count
+        
 
         yield return new WaitForSeconds(1);
 

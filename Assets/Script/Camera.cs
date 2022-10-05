@@ -11,7 +11,6 @@ public class Camera : MonoBehaviour
     private void Update()
     {
         Vector3 targetPosition = gameManager.GetActivePlayer().transform.position + distanceFromThePlayer;
-        Debug.Log(gameManager.GetActivePlayer());
 
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
