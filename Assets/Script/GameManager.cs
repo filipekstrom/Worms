@@ -71,4 +71,9 @@ public class GameManager : MonoBehaviour
         //If only 1 team remains, Victory
     }
 
+    public GameObject GetActivePlayer()
+    {
+        return activeCharacter.gameObject;
+    }
+
 }
