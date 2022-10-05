@@ -7,6 +7,7 @@ public class CharacterManager : MonoBehaviour
     private float life;
     [SerializeField]
     private int speed;
+    private bool isgrounded;
 
     private Rigidbody rb;
 
@@ -35,7 +36,21 @@ public class CharacterManager : MonoBehaviour
     public void Jump(){
         //Google is grounded
         //Apply jump force multiplier
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        if (isgrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        isgrounded = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        isgrounded=false;
     }
 
     public void Hit(float damage)
