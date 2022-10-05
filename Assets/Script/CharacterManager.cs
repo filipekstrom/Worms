@@ -59,7 +59,7 @@ public class CharacterManager : MonoBehaviour
         life = life - damage;
         if (life <= 0)
         {
-            
+            //destroyobject?
         }
     }
 }
