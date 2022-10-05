@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,14 +43,22 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void ChangeActivePlayer() {
+    public IEnumerator ChangeActivePlayer(){
 
         //Add one to team selected, or if at the last team, teamSeleced = 0
         //When cycling teams, add +1 to player selected. If last player, player selected = 0;
         //Tip for this: <List>.Count
 
-        teamSelected = 1;
-        //playerSelected++;
+        yield return new WaitForSeconds(1);
+
+        if (teamSelected == 0)
+        {
+            teamSelected = 1;
+        }
+        else
+        {
+            teamSelected = 0;
+        }
 
         activeCharacter = _teams[teamSelected][playerSelected].GetComponent<CharacterManager>();
         GameObject obj = activeCharacter.gameObject;

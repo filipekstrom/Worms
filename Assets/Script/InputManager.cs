@@ -17,9 +17,9 @@ public class InputManager : MonoBehaviour
             GameManager.gameManager.activeCharacter.Jump();
         }
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-
+            GameManager.gameManager.activeCharacter.gameObject.GetComponent<RaycastGun>().Shoot();
         }
 
         //Example of calling switch character script

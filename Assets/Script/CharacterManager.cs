@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
 {
+    [SerializeField]
     private float life;
     [SerializeField]
     private int speed;
@@ -34,8 +35,7 @@ public class CharacterManager : MonoBehaviour
     }
 
     public void Jump(){
-        //Google is grounded
-        //Apply jump force multiplier
+        
         if (isgrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -53,12 +53,13 @@ public class CharacterManager : MonoBehaviour
         isgrounded=false;
     }
 
+
     public void Hit(float damage)
     {
-        life -= damage;
+        life = life - damage;
         if (life <= 0)
         {
-            //DIE
+            
         }
     }
 }
